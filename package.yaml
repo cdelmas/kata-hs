@@ -1,0 +1,47 @@
+name:                kata-hs
+version:             0.1.0.0
+#synopsis:
+#description:
+homepage:            https://github.com/githubuser/kata-hs#readme
+license:             BSD3
+author:              Author name here
+maintainer:          example@example.com
+copyright:           2018 Author name here
+category:            Kata
+extra-source-files:
+- README.md
+
+dependencies:
+  - base >= 4.7 && < 5
+
+executables:
+  kata-hs:
+    source-dirs:      app
+    main:             Main.hs
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    - -Wall
+    - -Werror
+
+library:
+  source-dirs:        src
+  ghc-options:
+    - -Wall
+    - -Werror
+
+tests:
+  spec:
+    main: Spec.hs
+    source-dirs:
+      - test
+    dependencies:
+      - kata-hs
+      - hspec >= 2.2.1
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    - -Wall
+    - -Werror
